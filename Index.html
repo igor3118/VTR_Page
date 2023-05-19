@@ -1,0 +1,44 @@
+<html lang="en,pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de viatura</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Reserva de Viaturas</h1>
+    <form id="form" action="reserva.php" method="post">
+        <label for="carro">Escolha uma Viatura:</label>
+    <select name="carro" id="carro">
+      <!-- Aqui você pode preencher a lista de carros dinamicamente do banco de dados -->
+      <option value="1">HILLUX POLICIAL</option>
+      <option value="2">5TON</option>
+      <option value="3">ADM</option>
+      <option value="4">AMBULÂNCIA</option>
+
+    </select>
+
+    <label for="quantidade">Quantidade</label>
+    <input type="number" min="1" max="10" step="1">
+
+    <label for="adicionar">Adicionar Viatura</label>
+    <button type="button" id="adicionar">Adicionar</button>
+
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" required>
+
+    <label for="data">Data da reserva:</label>
+    <input type="date" name="data" id="data" required>
+
+    <label for="Missao">Missão:</label>
+    <input type="text" name="Missao" id="missao" required>
+
+    <input type="submit" value="Reservar">
+    </form>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
