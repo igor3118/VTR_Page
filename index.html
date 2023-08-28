@@ -9,36 +9,38 @@
 <body>
     <h1>Reserva de Viaturas</h1>
     <form id="form" action="reserva.php" method="post">
-        <label for="carro">Escolha uma Viatura:</label>
-    <select name="carro" id="carro">
+        <label for="car">Escolha uma Viatura:</label>
+    <select name="car" id="car">
       <!-- Aqui você pode preencher a lista de carros dinamicamente do banco de dados -->
-      <option value="1">HILLUX POLICIAL</option>
-      <option value="2">5TON</option>
-      <option value="3">ADM</option>
-      <option value="4">AMBULÂNCIA</option>
+      <option value="HILLUX POLICIAL">HILLUX POLICIAL</option>
+      <option value="5TON">5TON</option>
+      <option value="ADM">ADM</option>
+      <option value="AMBULANCIA">AMBULÂNCIA</option>
+      <option value="7TON">7TON</option>
 
     </select>
 
     <label for="quantidade">Quantidade</label>
     <input type="number" min="1" max="10" step="1">
 
-    <label for="adicionar">Adicionar Viatura</label>
-    <button type="button" id="adicionar">Adicionar</button>
-
     <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" required>
+    <input type="text" name="name" id="name" required>
 
     <label for="data">Data da reserva:</label>
-    <input type="date" name="data" id="data" required>
+    <input type="date" name="reservation_date" id="reservation_date" required>
 
-    <label for="Missao">Missão:</label>
+    <label for="hora">Horário</label>
+    <input type="time" name="time" id="time" required>
+
+    <label for="missao">Missão:</label>
     <input type="text" name="Missao" id="missao" required>
+
+    <label for="chefe">Chefe de Viatura</label>
+    <input type="text" name="chefe" id="chefe" required>
 
     <input type="submit" value="Reservar">
     </form>
     <div id="map"></div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <script src="script.js"></script>
 </body>
 </html>

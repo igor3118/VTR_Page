@@ -1,23 +1,28 @@
 <?php
 // Conexão com o banco de dados
 $servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "seu_banco_de_dados";
+$username = "dev";
+$password = "dev";
+$dbname = "teste";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+    var_dump('ConnectionError : ' . $conn->connect_error);
 }
+
 
 // Processar o formulário de reserva
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $carro = $_POST["carro"];
-    $nome = $_POST["nome"];
-    $data = $_POST["data"];
+    $car = $_POST["car"];
+    $quantidade = $_POST["quantidade"];
+    $name = $_POST["name"];
+    $reservation_date = $_POST["reservation_date"];
+    $time = $_POST["time"];
+    $chefe = $_POST["chefe"];
+    
 
     // Inserir a reserva no banco de dados
-    $sql = "INSERT INTO reservas (carro, nome, data) VALUES ('$carro', '$nome', '$data')";
+    $sql = "INSERT INTO reservations (car, quantidade, name, reservation_date, time, chefe) VALUES ('$car','$quantidade', '$name', '$reservation_date', '$time', '$chefe')";
     if ($conn->query($sql) === TRUE) {
         echo "Reserva efetuada com sucesso!";
     } else {

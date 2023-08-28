@@ -34,16 +34,25 @@ label {
 
 input[type="text"],
 input[type="date"],
+input[type="number"]
 select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+input[type="time"]{
+  width: 25%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
 
 input[type="submit"] {
   width: 100%;
-  padding: 10px;
+  padding: 11px;
+  margin-top: 10px;
   background-color: #4caf50;
   color: #fff;
   border: none;
@@ -51,13 +60,6 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="button"]{
-  width:2rem;
-  height:2rem;
-  background-color: royalblue;
-  cursor: pointer;
-
-}
 
 input[type="submit"]:hover {
   background-color: #45a049;
